@@ -85,6 +85,7 @@
   height: 0.1px;
   width: 40vw;
   border: 2px solid #767BE5;
+  margin-left: 10px;
 }
 .delete{
   color: #767BE5;
@@ -112,7 +113,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal{
