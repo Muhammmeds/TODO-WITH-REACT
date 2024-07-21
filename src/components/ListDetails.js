@@ -17,6 +17,7 @@ const ListDetails = ({ list , setList }) => {
 
     const handleDelete = (id) => {
         setList((list) => list.filter(item => item.id !== id))
+        setModal(false)
     };
 
     const CloseModalFromBackground = (e) =>{
