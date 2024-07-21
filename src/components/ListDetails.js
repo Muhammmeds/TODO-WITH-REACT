@@ -33,7 +33,7 @@ const ListDetails = ({ list , setList }) => {
                 <>
                 { modal ? <div className='modalbackground' onClick={CloseModalFromBackground}>
                 <div className='modal'>
-                    <p>Are you sure?</p>
+                    <p>Delete Todo List!!</p>
                     <div>
                         <button onClick={() => handleDelete(item.id)} >Yes</button>
                         <button onClick={()=> setModal(false)}>No</button>
@@ -55,10 +55,7 @@ const ListDetails = ({ list , setList }) => {
                     </div>
                   
                     <div>
-                        {!item.isDone ?
-                        <MdDelete className='delete' onClick={()=> setModal(true)}
-                         /> : <p className='done'>Done</p>
-                        }
+                        <MdDelete className='delete' onClick={()=> setModal(true)}/>
                    
                     </div>
 

@@ -95,9 +95,7 @@
   transition: 0.2s all ease-in;
 
 }
-.done{
-  color: #767BE5;
-}
+
 .sad{
   position: relative;
   margin-left: 5px;
@@ -114,7 +112,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .modal{
@@ -131,16 +129,17 @@
 }
 .modal button{
   margin: 20px;
-  background-color: white;
+  background-color: #767BE5;
   border: 2px solid #767BE5;
   border-radius: 5px;
   transition: 0.2s all ease-in;
   font-weight: 600;
-  color: black;
+  color: white;
+  padding: 5px 10px;
 
 }
 .modal button:hover{
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 .modal p{
@@ -163,5 +162,8 @@
   }
   .modal{
     width: 50vw;
+  }
+  .modal p{
+    font-size: 15px;
   }
 }
