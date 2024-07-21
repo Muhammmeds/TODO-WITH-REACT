@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import '../App.css';
 import { MdDelete } from "react-icons/md";
 import { FaRegFaceSadTear } from "react-icons/fa6";
+import DeleteModal from './DeleteModal';
 
 
 const ListDetails = ({ list , setList }) => {
-    // const [items, setItems] = useState(list);
+    const [modal , setModal] = useState(false)
 
     const handleCheckboxChange = (id) => {
         setList((list) =>
@@ -16,18 +17,29 @@ const ListDetails = ({ list , setList }) => {
     };
 
     const handleDelete = (id) => {
-    let confirm = window.confirm('Are you sure you want to delete task?')
-
-    if(confirm){
         setList((list) => list.filter(item => item.id !== id))
-    }
-
     };
+
+    const CloseModalFromBackground = (e) =>{
+        if(e.target.classList.contains('modalbackground')){
+            setModal(false)
+        }
+    }
 
     return (
         <div className='listdetails'>
-            {list.length ? list.map((item) => (
+                    
+        {list.length ? list.map((item) => (
                 <>
+                { modal ? <div className='modalbackground' onClick={CloseModalFromBackground}>
+                <div className='modal'>
+                    <p>Are you sure?</p>
+                    <div>
+                        <button onClick={() => handleDelete(item.id)} >Yes</button>
+                        <button onClick={()=> setModal(false)}>No</button>
+                    </div>
+                 </div>
+            </div> : null } 
                 <div className='eachlist' key={item.id}>
                     <div>
                     <input className='checkbox'
@@ -44,8 +56,7 @@ const ListDetails = ({ list , setList }) => {
                   
                     <div>
                         {!item.isDone ?
-                        <MdDelete className='delete'
-                             onClick={() => handleDelete(item.id)} 
+                        <MdDelete className='delete' onClick={()=> setModal(true)}
                          /> : <p className='done'>Done</p>
                         }
                    
