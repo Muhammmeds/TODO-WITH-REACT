@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../App.css';
 import { MdDelete } from "react-icons/md";
 import { FaRegFaceSadTear } from "react-icons/fa6";
-import DeleteModal from './DeleteModal';
 
 
 const ListDetails = ({ list , setList }) => {
